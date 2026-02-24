@@ -1,0 +1,29 @@
+{
+  "name": "senja-indexer",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ponder dev --schema dev_1767794095",
+    "start": "ponder start --schema $PONDER_SCHEMA",
+    "db": "ponder db",
+    "codegen": "ponder codegen",
+    "lint": "eslint . --ext .ts",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "hono": "^4.5.0",
+    "ponder": "^0.16.1",
+    "viem": "^2.21.3"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10",
+    "@types/node": "^20.9.0",
+    "eslint": "^8.53.0",
+    "eslint-config-ponder": "^0.15.8",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.14"
+  }
+}

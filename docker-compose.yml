@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  indexer:
+    build: .
+    container_name: senja-indexer
+    env_file: .env
+    ports:
+      - "42069:42069"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: 600M
+        reservations:
+          memory: 256M

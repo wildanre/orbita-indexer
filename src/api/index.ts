@@ -1,0 +1,16 @@
+import { db } from "ponder:api";
+import schema from "ponder:schema";
+import { Hono } from "hono";
+import { client, graphql } from "ponder";
+import { handleLendingPoolRate } from "./handlers/lendingPoolRate";
+
+const app = new Hono();
+
+app.use("/sql/*", client({ db, schema }));
+
+app.use("/", graphql({ db, schema }));
+app.use("/graphql", graphql({ db, schema }));
+
+app.get("/lendingPoolRate/:chainId/:lendingPool", handleLendingPoolRate);
+
+export default app;
