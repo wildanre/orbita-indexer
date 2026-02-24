@@ -3,16 +3,14 @@ import { getAddress } from "viem";
 // Helper type for chain config
 export type ChainConfig = Record<string, any>;
 
-/**
- * Build chain config for kairos chain.
- */
-export const buildChainConfig = (kairosConfig: any): ChainConfig => {
-  return { kairos: kairosConfig };
+
+export const buildChainConfig = (worldchainSepoliaConfig: any): ChainConfig => {
+  return { worldchainSepolia: worldchainSepoliaConfig };
 };
 
 /**
- * Build address array for kairos chain.
+ * Build address array for worldchainSepolia chain.
  */
-export const buildAddressArray = (kairosAddress: string): `0x${string}`[] => {
-  return [getAddress(kairosAddress)];
+export const buildAddressArray = (worldchainSepoliaAddress: string): `0x${string}`[] => {
+  return [getAddress(worldchainSepoliaAddress)];
 };

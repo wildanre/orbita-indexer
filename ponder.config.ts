@@ -31,7 +31,7 @@ export default createConfig({
   chains: {
     worldchainSepolia: {
       id: worldchainSepolia.id,
-      rpc: process.env.PONDER_RPC_URL_KAIROS_1!,
+      rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1!,
     },
   },
   contracts: {
@@ -111,10 +111,10 @@ export default createConfig({
     ...(indexerToggle.SenjaEmitter && {
       SenjaEmitter: {
         abi: SenjaEmitterAbi,
-        address: buildAddressArray(chain["worldchainSepolia_SenjaEmitter"].contractAddress),
+        address: buildAddressArray(chain["worldchainSepolia_Emitter"].contractAddress),
         chain: buildChainConfig({
-          address: getAddress(chain["worldchainSepolia_SenjaEmitter"].contractAddress),
-          startBlock: chain["worldchainSepolia_SenjaEmitter"].startBlock,
+          address: getAddress(chain["worldchainSepolia_Emitter"].contractAddress),
+          startBlock: chain["worldchainSepolia_Emitter"].startBlock,
         }),
       },
     }),
@@ -124,11 +124,11 @@ export default createConfig({
         abi: PositionAbi,
         chain: buildChainConfig({
           address: factory({
-            address: getAddress(chain["worldchainSepolia_SenjaEmitter"].contractAddress),
+            address: getAddress(chain["worldchainSepolia_Emitter"].contractAddress),
             event: PositionCreatedEvent,
             parameter: "position",
           }),
-          startBlock: chain["worldchainSepolia_SenjaEmitter"].startBlock,
+          startBlock: chain["worldchainSepolia_Emitter"].startBlock,
         }),
       },
     }),

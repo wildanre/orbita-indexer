@@ -1,7 +1,7 @@
 import { chain } from "../../ponder.chains";
 
-export const kairosTokenToPriceFeed = {
-  [chain["kairos_OracleBTCUSDT"].contractAddress]: "WBTC",
-  [chain["kairos_OracleETHUSDT"].contractAddress]: "WETH",
-  [chain["kairos_OracleKAIAUSDT"].contractAddress]: "KAIA",
+export const worldchainSepoliaTokenToPriceFeed = {
+  [chain["worldchainSepolia_OracleBTCUSDT"].contractAddress]: "WBTC",
+  [chain["worldchainSepolia_OracleETHUSDT"].contractAddress]: "WETH",
+  // [chain["worldchainSepolia_OracleKAIAUSDT"].contractAddress]: "KAIA",
 };

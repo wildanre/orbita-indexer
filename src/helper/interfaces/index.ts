@@ -1,6 +1,6 @@
 import { Chain } from "viem";
 
-export type InterestRateModelKey = "kairos_InterestRateModel";
+export type InterestRateModelKey = "worldchainSepolia_InterestRateModel";
 
 export interface ChainConfig {
   chain: Chain;

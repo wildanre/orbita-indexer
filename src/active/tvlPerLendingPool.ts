@@ -13,7 +13,7 @@ export const tvlPerLendingPoolUpdate = async (
   // WBTC: amounts
   // WETH: amounts
   // USDT: amounts
-  // WKAIA: amounts
+
   let tokens: string[] = [];
   if (
     typeUpdate == "Supply Liquidity" ||

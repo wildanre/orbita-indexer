@@ -16,7 +16,7 @@ type SupportedChains =
   | "worldchainSepolia_USDTOFTAdapter"
   | "worldchainSepolia_WKAIAOFTAdapter"
   | "worldchainSepolia_WETHOFTAdapter"
-  | "worldchainSepolia_SenjaEmitter";
+  | "worldchainSepolia_Emitter";
 
 type PonderChainConfig = {
   id: number;
@@ -26,7 +26,7 @@ type PonderChainConfig = {
 };
 
 const contractAddresses: Record<SupportedChains, string> = {
-  worldchainSepolia_factory: "0x3705620C09D43935C00852d3610e31C942595cE8",
+  worldchainSepolia_factory: "0x0EcE75f3C36f7Df2136Dac7633165DBff53dE3CD",
   worldchainSepolia_OracleBTCUSDT: "0x229fbc2252e2da530ecc7b1d727de71e9e217a28",
   worldchainSepolia_OracleETHUSDT: "0xf79b2b590db916ecd6f35e9f80a7f8f7d9663d24",
   worldchainSepolia_OracleKAIAUSDT: "0x7f9a888dd135927b66da692803f5f52b1a9a5cb4",
@@ -40,7 +40,7 @@ const contractAddresses: Record<SupportedChains, string> = {
   worldchainSepolia_USDTOFTAdapter: "0x1e68394DBd41F77Adf0644CE47b25D1023D664B1",
   worldchainSepolia_WKAIAOFTAdapter: "0xd506b22a6b3216b736021FA262D0F5D686e07b35",
   worldchainSepolia_WETHOFTAdapter: "0x31fC86E13108A098830eea63A8A9f6d80DfC89Aa",
-  worldchainSepolia_SenjaEmitter: "0x677f0172ff3E8EEf477Ce811Ed57A85B8d8a3bDa",
+  worldchainSepolia_Emitter: "0x677f0172ff3E8EEf477Ce811Ed57A85B8d8a3bDa",
 };
 
 // Start blocks for factory-derived contracts
@@ -139,10 +139,10 @@ export const chain: Record<SupportedChains, PonderChainConfig> = {
     startBlock: 205097683,
     contractAddress: getAddress(contractAddresses.worldchainSepolia_WETHOFTAdapter),
   },
-  worldchainSepolia_SenjaEmitter: {
+  worldchainSepolia_Emitter: {
     id: worldchainSepolia.id,
     rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
     startBlock: 206146552,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_SenjaEmitter),
+    contractAddress: getAddress(contractAddresses.worldchainSepolia_Emitter),
   },
 };
