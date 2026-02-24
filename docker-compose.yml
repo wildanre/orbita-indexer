@@ -5,10 +5,9 @@ services:
     build: .
     container_name: orbita-indexer
     env_file: .env
+    network_mode: "host"
     environment:
       - PORT=42070
-    ports:
-      - "42070:42070"
     restart: unless-stopped
     logging:
       driver: "json-file"
