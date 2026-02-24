@@ -14,8 +14,8 @@ import { handleFeedUpdated } from "../../events/Oracle/handleFeedUpdated";
 //   });
 // }
 
-// if (indexerToggle.OracleKAIAUSDT) {
-//   ponder.on("OracleKAIAUSDT:FeedUpdated", async ({ event, context }) => {
-//     await handleFeedUpdated(event, context, "KAIA");
+// if (indexerToggle.OracleUSD) {
+//   ponder.on("OracleUSD:FeedUpdated", async ({ event, context }) => {
+//     await handleFeedUpdated(event, context, "USD");
 //   });
 // }

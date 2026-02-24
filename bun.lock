@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "senja-indexer",
+      "name": "orbita-indexer",
       "dependencies": {
         "hono": "^4.5.0",
         "ponder": "^0.16.1",

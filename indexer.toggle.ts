@@ -25,19 +25,8 @@ export const indexerToggle = {
   IsHealthy: true,
   SenjaEmitter: true,
 
-  // ElevatedMinterBurner contracts
-  USDTElevatedMinterBurner: true,
-  USDCElevatedMinterBurner: true,
-  WETHElevatedMinterBurner: true,
-  WBTCElevatedMinterBurner: true,
-
   // MockDex
   MockDex: true,
-
-  // OFTAdapter contracts
-  USDTOFTAdapter: true,
-  WKAIAOFTAdapter: true,
-  WETHOFTAdapter: true,
 
   // ========================================
   // Shared Events Toggle

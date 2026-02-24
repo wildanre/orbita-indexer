@@ -1,14 +1,12 @@
 import { createConfig, factory } from "ponder";
 import { getAddress } from "viem";
 import { worldchainSepolia } from "viem/chains";
-import { ElevatedMinterBurnerAbi } from "./abis/ElevatedMinterBurnerAbi";
 import { InterestRateModelAbi } from "./abis/InterestRateModelAbi";
 import { IsHealthyAbi } from "./abis/IsHealthyAbi";
 import { LendingPoolAbi } from "./abis/LendingPoolAbi";
 import { LendingPoolFactoryAbi } from "./abis/LendingPoolFactoryAbi";
 import { LendingPoolRouterAbi } from "./abis/LendingPoolRouterAbi";
 import { MockDexAbi } from "./abis/MockDexAbi";
-import { OFTAdapterAbi } from "./abis/OFTAdapterAbi";
 import { PositionAbi } from "./abis/PositionAbi";
 import { SenjaEmitterAbi } from "./abis/SenjaEmitterAbi";
 import { SenjaSharesTokenAbi } from "./abis/SenjaSharesToken";
@@ -168,62 +166,6 @@ export default createConfig({
     }),
 
     // ===========================================
-    // ElevatedMinterBurner Contracts
-    // ===========================================
-    ...(indexerToggle.USDTElevatedMinterBurner && {
-      USDTElevatedMinterBurner: {
-        abi: ElevatedMinterBurnerAbi,
-        address: buildAddressArray(chain["worldchainSepolia_USDTElevatedMinterBurner"].contractAddress),
-        chain: buildChainConfig({
-          address: getAddress(chain["worldchainSepolia_USDTElevatedMinterBurner"].contractAddress),
-          startBlock: chain["worldchainSepolia_USDTElevatedMinterBurner"].startBlock,
-        }),
-      },
-    }),
-    ...(indexerToggle.USDCElevatedMinterBurner
-      ? {
-          USDCElevatedMinterBurner: {
-            abi: ElevatedMinterBurnerAbi,
-            address: [getAddress(chain["worldchainSepolia_USDCElevatedMinterBurner"].contractAddress)],
-            chain: {
-              worldchainSepolia: {
-                address: getAddress(chain["worldchainSepolia_USDCElevatedMinterBurner"].contractAddress),
-                startBlock: chain["worldchainSepolia_USDCElevatedMinterBurner"].startBlock,
-              },
-            },
-          },
-        }
-      : {}),
-    ...(indexerToggle.WETHElevatedMinterBurner
-      ? {
-          WETHElevatedMinterBurner: {
-            abi: ElevatedMinterBurnerAbi,
-            address: [getAddress(chain["worldchainSepolia_WETHElevatedMinterBurner"].contractAddress)],
-            chain: {
-              worldchainSepolia: {
-                address: getAddress(chain["worldchainSepolia_WETHElevatedMinterBurner"].contractAddress),
-                startBlock: chain["worldchainSepolia_WETHElevatedMinterBurner"].startBlock,
-              },
-            },
-          },
-        }
-      : {}),
-    ...(indexerToggle.WBTCElevatedMinterBurner
-      ? {
-          WBTCElevatedMinterBurner: {
-            abi: ElevatedMinterBurnerAbi,
-            address: [getAddress(chain["worldchainSepolia_WBTCElevatedMinterBurner"].contractAddress)],
-            chain: {
-              worldchainSepolia: {
-                address: getAddress(chain["worldchainSepolia_WBTCElevatedMinterBurner"].contractAddress),
-                startBlock: chain["worldchainSepolia_WBTCElevatedMinterBurner"].startBlock,
-              },
-            },
-          },
-        }
-      : {}),
-
-    // ===========================================
     // MockDex Contract
     // ===========================================
     ...(indexerToggle.MockDex && {
@@ -236,47 +178,5 @@ export default createConfig({
         }),
       },
     }),
-
-    // ===========================================
-    // OFTAdapter Contracts
-    // ===========================================
-    ...(indexerToggle.USDTOFTAdapter && {
-      USDTOFTAdapter: {
-        abi: OFTAdapterAbi,
-        address: buildAddressArray(chain["worldchainSepolia_USDTOFTAdapter"].contractAddress),
-        chain: buildChainConfig({
-          address: getAddress(chain["worldchainSepolia_USDTOFTAdapter"].contractAddress),
-          startBlock: chain["worldchainSepolia_USDTOFTAdapter"].startBlock,
-        }),
-      },
-    }),
-    ...(indexerToggle.WKAIAOFTAdapter
-      ? {
-          WKAIAOFTAdapter: {
-            abi: OFTAdapterAbi,
-            address: [getAddress(chain["worldchainSepolia_WKAIAOFTAdapter"].contractAddress)],
-            chain: {
-              worldchainSepolia: {
-                address: getAddress(chain["worldchainSepolia_WKAIAOFTAdapter"].contractAddress),
-                startBlock: chain["worldchainSepolia_WKAIAOFTAdapter"].startBlock,
-              },
-            },
-          },
-        }
-      : {}),
-    ...(indexerToggle.WETHOFTAdapter
-      ? {
-          WETHOFTAdapter: {
-            abi: OFTAdapterAbi,
-            address: [getAddress(chain["worldchainSepolia_WETHOFTAdapter"].contractAddress)],
-            chain: {
-              worldchainSepolia: {
-                address: getAddress(chain["worldchainSepolia_WETHOFTAdapter"].contractAddress),
-                startBlock: chain["worldchainSepolia_WETHOFTAdapter"].startBlock,
-              },
-            },
-          },
-        }
-      : {}),
   },
 });

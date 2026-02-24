@@ -9,7 +9,5 @@ import "./listeners/Oracle";
 import "./listeners/InterestRateModel";
 import "./listeners/TokenDataStream";
 import "./listeners/IsHealthy";
-import "./listeners/ElevatedMinterBurner";
 import "./listeners/MockDex";
-import "./listeners/OFTAdapter";
 import "./listeners/Position";

@@ -10,14 +10,7 @@ type SupportedChains =
   | "worldchainSepolia_InterestRateModel"
   | "worldchainSepolia_TokenDataStream"
   | "worldchainSepolia_IsHealthy"
-  | "worldchainSepolia_USDTElevatedMinterBurner"
-  | "worldchainSepolia_USDCElevatedMinterBurner"
-  | "worldchainSepolia_WETHElevatedMinterBurner"
-  | "worldchainSepolia_WBTCElevatedMinterBurner"
   | "worldchainSepolia_MockDex"
-  | "worldchainSepolia_USDTOFTAdapter"
-  | "worldchainSepolia_WKAIAOFTAdapter"
-  | "worldchainSepolia_WETHOFTAdapter"
   | "worldchainSepolia_Emitter";
 
 type PonderChainConfig = {
@@ -36,17 +29,7 @@ const contractAddresses: Record<SupportedChains, string> = {
   worldchainSepolia_InterestRateModel: "0x39926DA4905f5Edb956F5dB5F2e2FF044E0882B2",
   worldchainSepolia_TokenDataStream: "0xC327486Db1417644f201d84414bbeA6C8A948bef",
   worldchainSepolia_IsHealthy: "0x487b1e0177B3ac1ACA7e8c353ed0Df133593a8EB",
-  worldchainSepolia_USDTElevatedMinterBurner: "0xaF126B36958Ef1A6Ed80118841A7f1660f921346",
-  worldchainSepolia_USDCElevatedMinterBurner: "0x821681B66EeeBF9De09e2D1ed01d7A2d2EFCBfd6",
-  worldchainSepolia_WETHElevatedMinterBurner: "0xB2D53CeA5b2e59F6523088Ba3A149E35E34C24C9",
-  worldchainSepolia_WBTCElevatedMinterBurner: "0x6D68A52Bc77F2eAc3582a7072eAd94C19B9f480c",
-
   worldchainSepolia_MockDex: "0x5C368bd6cE77b2ca47B4ba791fCC1f1645591c84",
-
-  worldchainSepolia_USDTOFTAdapter: "0x1e68394DBd41F77Adf0644CE47b25D1023D664B1",
-  worldchainSepolia_WKAIAOFTAdapter: "0xd506b22a6b3216b736021FA262D0F5D686e07b35",
-  worldchainSepolia_WETHOFTAdapter: "0x31fC86E13108A098830eea63A8A9f6d80DfC89Aa",
-
   worldchainSepolia_Emitter: "0xeA25630BF89a0fF560308E7D12920695A586b0A2",
 };
 
@@ -110,53 +93,11 @@ export const chain: Record<SupportedChains, PonderChainConfig> = {
     startBlock: 25054919,
     contractAddress: getAddress(contractAddresses.worldchainSepolia_IsHealthy),
   },
-  worldchainSepolia_USDTElevatedMinterBurner: {
-    id: worldchainSepolia.id,
-    rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
-    startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_USDTElevatedMinterBurner),
-  },
-  worldchainSepolia_USDCElevatedMinterBurner: {
-    id: worldchainSepolia.id,
-    rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
-    startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_USDCElevatedMinterBurner),
-  },
-  worldchainSepolia_WETHElevatedMinterBurner: {
-    id: worldchainSepolia.id,
-    rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
-    startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_WETHElevatedMinterBurner),
-  },
-  worldchainSepolia_WBTCElevatedMinterBurner: {
-    id: worldchainSepolia.id,
-    rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
-    startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_WBTCElevatedMinterBurner),
-  },
   worldchainSepolia_MockDex: {
     id: worldchainSepolia.id,
     rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
     startBlock: 25054919,
     contractAddress: getAddress(contractAddresses.worldchainSepolia_MockDex),
-  },
-  worldchainSepolia_USDTOFTAdapter: {
-    id: worldchainSepolia.id,
-    rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
-    startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_USDTOFTAdapter),
-  },
-  worldchainSepolia_WKAIAOFTAdapter: {
-    id: worldchainSepolia.id,
-    rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
-    startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_WKAIAOFTAdapter),
-  },
-  worldchainSepolia_WETHOFTAdapter: {
-    id: worldchainSepolia.id,
-    rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
-    startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_WETHOFTAdapter),
   },
   worldchainSepolia_Emitter: {
     id: worldchainSepolia.id,
