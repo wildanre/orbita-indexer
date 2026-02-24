@@ -43,12 +43,12 @@ echo -e "${GREEN}✓${NC} Nginx and Certbot installed\n"
 
 # 3. Create Nginx Config with Rate Limiting
 echo -e "${GREEN}[3/6]${NC} Creating Nginx configuration..."
-cat <<'EOF' | sudo tee /etc/nginx/sites-available/senja-indexer > /dev/null
+cat <<'EOF' | sudo tee /etc/nginx/sites-available/orbita-indexer > /dev/null
 # Rate limit zones - 1000 requests/second
 limit_req_zone $binary_remote_addr zone=graphql_limit:10m rate=1000r/s;
 
 upstream ponder_backend {
-    server localhost:42069;
+    server localhost:42070;
 }
 
 server {
@@ -100,13 +100,13 @@ server {
     }
 
     # Logging
-    access_log /var/log/nginx/senja-indexer-access.log;
-    error_log /var/log/nginx/senja-indexer-error.log;
+    access_log /var/log/nginx/orbita-indexer-access.log;
+    error_log /var/log/nginx/orbita-indexer-error.log;
 }
 EOF
 
 # Enable site
-sudo ln -sf /etc/nginx/sites-available/senja-indexer /etc/nginx/sites-enabled/
+sudo ln -sf /etc/nginx/sites-available/orbita-indexer /etc/nginx/sites-enabled/
 sudo rm -f /etc/nginx/sites-enabled/default
 
 # Test config
@@ -149,7 +149,7 @@ echo -e "${GREEN}✓${NC} SSL auto-renewal configured\n"
 # Restart services
 echo -e "${YELLOW}Restarting services...${NC}"
 sudo systemctl restart nginx
-cd ~/apps/senja-indexer
+cd ~/orbita-indexer
 docker-compose restart
 
 echo ""
@@ -174,5 +174,5 @@ echo "  curl -I https://$DOMAIN"
 echo ""
 echo -e "${YELLOW}Monitor:${NC}"
 echo "  docker-compose logs -f"
-echo "  sudo tail -f /var/log/nginx/senja-indexer-access.log"
+echo "  sudo tail -f /var/log/nginx/orbita-indexer-access.log"
 echo ""

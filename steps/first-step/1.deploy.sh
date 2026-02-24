@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 # Configuration
 REMOTE_USER="${VPS_USER:-root}"
 REMOTE_HOST="${VPS_HOST}"
-REMOTE_PATH="${VPS_PATH:-~/apps/senja-indexer}"
+REMOTE_PATH="${VPS_PATH:-~/orbita-indexer}"
 PEM_FILE="${PEM_FILE}"
 
 # Function to print colored messages

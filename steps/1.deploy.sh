@@ -13,7 +13,7 @@ NC='\033[0m'
 # Configuration
 SSH_HOST="senja-idcloud"
 SSH_PORT="69"
-REMOTE_PATH="~/apps/senja-indexer"
+REMOTE_PATH="~/orbita-indexer"
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
 # SSH/SCP/rsync command wrappers

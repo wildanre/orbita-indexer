@@ -1,12 +1,14 @@
 version: "3.8"
 
 services:
-  indexer:
+  orbita-indexer:
     build: .
-    container_name: senja-indexer
+    container_name: orbita-indexer
     env_file: .env
+    environment:
+      - PORT=42070
     ports:
-      - "42069:42069"
+      - "42070:42070"
     restart: unless-stopped
     logging:
       driver: "json-file"

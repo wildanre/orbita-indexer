@@ -42,7 +42,7 @@ server {
     real_ip_header CF-Connecting-IP;
 
     location / {
-        proxy_pass http://127.0.0.1:42069;
+        proxy_pass http://127.0.0.1:42070;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
@@ -68,5 +68,5 @@ $SSH_CMD "sudo nginx -t && sudo systemctl enable nginx && sudo systemctl restart
 
 echo ""
 echo -e "${GREEN}[INFO]${NC} ✅ Nginx reverse proxy setup complete!"
-echo -e "${GREEN}[INFO]${NC} $DOMAIN → localhost:42069"
+echo -e "${GREEN}[INFO]${NC} $DOMAIN → localhost:42070"
 echo -e "${GREEN}[INFO]${NC} Cloudflare Proxied mode compatible (no SSL needed on server, Cloudflare handles it)"

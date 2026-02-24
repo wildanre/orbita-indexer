@@ -15,11 +15,11 @@ docker-compose down
 
 # Remove PostgreSQL volume
 echo -e "${GREEN}[2/4]${NC} Removing PostgreSQL volume..."
-docker volume rm senja-indexer_postgres-data 2>/dev/null || echo "Volume already removed"
+docker volume rm orbita-indexer_postgres-data 2>/dev/null || echo "Volume already removed"
 
 # Remove PostgreSQL container (if any)
 echo -e "${GREEN}[3/4]${NC} Removing PostgreSQL container..."
-docker rm -f senja-postgres 2>/dev/null || echo "Container already removed"
+docker rm -f orbita-postgres 2>/dev/null || echo "Container already removed"
 
 # Start with Supabase config
 echo -e "${GREEN}[4/4]${NC} Restarting with Supabase..."
