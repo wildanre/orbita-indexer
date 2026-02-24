@@ -14,16 +14,16 @@ if (indexerToggle.USDTElevatedMinterBurner) {
   });
 }
 
-// WKAIA
-if (indexerToggle.WKAIAElevatedMinterBurner) {
+// USDC
+if (indexerToggle.USDCElevatedMinterBurner) {
   // @ts-expect-error - Contract conditionally configured based on indexerToggle
-  ponder.on("WKAIAElevatedMinterBurner:Mint", async ({ event, context }) => {
-    await handleElevatedMint(event, context, "WKAIA");
+  ponder.on("USDCElevatedMinterBurner:Mint", async ({ event, context }) => {
+    await handleElevatedMint(event, context, "USDC");
   });
 
   // @ts-expect-error - Contract conditionally configured based on indexerToggle
-  ponder.on("WKAIAElevatedMinterBurner:Burn", async ({ event, context }) => {
-    await handleElevatedBurn(event, context, "WKAIA");
+  ponder.on("USDCElevatedMinterBurner:Burn", async ({ event, context }) => {
+    await handleElevatedBurn(event, context, "USDC");
   });
 }
 
@@ -37,5 +37,18 @@ if (indexerToggle.WETHElevatedMinterBurner) {
   // @ts-expect-error - Contract conditionally configured based on indexerToggle
   ponder.on("WETHElevatedMinterBurner:Burn", async ({ event, context }) => {
     await handleElevatedBurn(event, context, "WETH");
+  });
+}
+
+// WBTC
+if (indexerToggle.WBTCElevatedMinterBurner) {
+  // @ts-expect-error - Contract conditionally configured based on indexerToggle
+  ponder.on("WBTCElevatedMinterBurner:Mint", async ({ event, context }) => {
+    await handleElevatedMint(event, context, "WBTC");
+  });
+
+  // @ts-expect-error - Contract conditionally configured based on indexerToggle
+  ponder.on("WBTCElevatedMinterBurner:Burn", async ({ event, context }) => {
+    await handleElevatedBurn(event, context, "WBTC");
   });
 }

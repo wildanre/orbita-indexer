@@ -14,9 +14,10 @@ export const indexerToggle = {
   Position: true,
 
   // Oracle contracts
-  OracleBTCUSDT: false,
-  OracleETHUSDT: false,
-  OracleKAIAUSDT: false,
+  OracleUSDTUSD: false,
+  OracleNATIVEUSD: false,
+  OracleETHUSD: false,
+  OracleBTCUSD: false,
 
   // Utility contracts
   InterestRateModel: true,
@@ -26,8 +27,9 @@ export const indexerToggle = {
 
   // ElevatedMinterBurner contracts
   USDTElevatedMinterBurner: true,
-  WKAIAElevatedMinterBurner: true,
+  USDCElevatedMinterBurner: true,
   WETHElevatedMinterBurner: true,
+  WBTCElevatedMinterBurner: true,
 
   // MockDex
   MockDex: true,

@@ -180,15 +180,15 @@ export default createConfig({
         }),
       },
     }),
-    ...(indexerToggle.WKAIAElevatedMinterBurner
+    ...(indexerToggle.USDCElevatedMinterBurner
       ? {
-          WKAIAElevatedMinterBurner: {
+          USDCElevatedMinterBurner: {
             abi: ElevatedMinterBurnerAbi,
-            address: [getAddress(chain["worldchainSepolia_WKAIAElevatedMinterBurner"].contractAddress)],
+            address: [getAddress(chain["worldchainSepolia_USDCElevatedMinterBurner"].contractAddress)],
             chain: {
               worldchainSepolia: {
-                address: getAddress(chain["worldchainSepolia_WKAIAElevatedMinterBurner"].contractAddress),
-                startBlock: chain["worldchainSepolia_WKAIAElevatedMinterBurner"].startBlock,
+                address: getAddress(chain["worldchainSepolia_USDCElevatedMinterBurner"].contractAddress),
+                startBlock: chain["worldchainSepolia_USDCElevatedMinterBurner"].startBlock,
               },
             },
           },
@@ -203,6 +203,20 @@ export default createConfig({
               worldchainSepolia: {
                 address: getAddress(chain["worldchainSepolia_WETHElevatedMinterBurner"].contractAddress),
                 startBlock: chain["worldchainSepolia_WETHElevatedMinterBurner"].startBlock,
+              },
+            },
+          },
+        }
+      : {}),
+    ...(indexerToggle.WBTCElevatedMinterBurner
+      ? {
+          WBTCElevatedMinterBurner: {
+            abi: ElevatedMinterBurnerAbi,
+            address: [getAddress(chain["worldchainSepolia_WBTCElevatedMinterBurner"].contractAddress)],
+            chain: {
+              worldchainSepolia: {
+                address: getAddress(chain["worldchainSepolia_WBTCElevatedMinterBurner"].contractAddress),
+                startBlock: chain["worldchainSepolia_WBTCElevatedMinterBurner"].startBlock,
               },
             },
           },

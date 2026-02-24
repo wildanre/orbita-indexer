@@ -3,15 +3,17 @@ import { worldchainSepolia } from "viem/chains";
 
 type SupportedChains =
   | "worldchainSepolia_factory"
-  | "worldchainSepolia_OracleBTCUSDT"
-  | "worldchainSepolia_OracleETHUSDT"
-  | "worldchainSepolia_OracleKAIAUSDT"
+  | "worldchainSepolia_OracleUSDTUSD"
+  | "worldchainSepolia_OracleNATIVEUSD"
+  | "worldchainSepolia_OracleETHUSD"
+  | "worldchainSepolia_OracleBTCUSD"
   | "worldchainSepolia_InterestRateModel"
   | "worldchainSepolia_TokenDataStream"
   | "worldchainSepolia_IsHealthy"
   | "worldchainSepolia_USDTElevatedMinterBurner"
-  | "worldchainSepolia_WKAIAElevatedMinterBurner"
+  | "worldchainSepolia_USDCElevatedMinterBurner"
   | "worldchainSepolia_WETHElevatedMinterBurner"
+  | "worldchainSepolia_WBTCElevatedMinterBurner"
   | "worldchainSepolia_MockDex"
   | "worldchainSepolia_USDTOFTAdapter"
   | "worldchainSepolia_WKAIAOFTAdapter"
@@ -27,18 +29,17 @@ type PonderChainConfig = {
 
 const contractAddresses: Record<SupportedChains, string> = {
   worldchainSepolia_factory: "0xC746B3AaB0C6Da075C9b7b43CEebd437Ef759D5b",
-
-  worldchainSepolia_OracleBTCUSDT: "0x229fbc2252e2da530ecc7b1d727de71e9e217a28",
-  worldchainSepolia_OracleETHUSDT: "0xf79b2b590db916ecd6f35e9f80a7f8f7d9663d24",
-  worldchainSepolia_OracleKAIAUSDT: "0x7f9a888dd135927b66da692803f5f52b1a9a5cb4",
-
+  worldchainSepolia_OracleUSDTUSD: "0x2D9A3d17400332c44ff0E2dC1b728529a33F5591",
+  worldchainSepolia_OracleNATIVEUSD: "0xC2caA26226585F666Ec79f8eCDB0AEc17893aF1d",
+  worldchainSepolia_OracleETHUSD: "0x22BE5ff1eF09ebf06995Da9050d44d23070C2142",
+  worldchainSepolia_OracleBTCUSD: "0x43aDD670A0E1948C90386d2b972FCAEC6CE1BE90",
   worldchainSepolia_InterestRateModel: "0x39926DA4905f5Edb956F5dB5F2e2FF044E0882B2",
   worldchainSepolia_TokenDataStream: "0xC327486Db1417644f201d84414bbeA6C8A948bef",
   worldchainSepolia_IsHealthy: "0x487b1e0177B3ac1ACA7e8c353ed0Df133593a8EB",
-
-  worldchainSepolia_USDTElevatedMinterBurner: "0xeBb7a56fd2D0231A9BF7240542cbD09a641a29Fc",
-  worldchainSepolia_WKAIAElevatedMinterBurner: "0x53D7f02e72d62f7b7B41F6B622A7d79694BED966",
-  worldchainSepolia_WETHElevatedMinterBurner: "0xBdC661EECb0dcFB940A34008e0190c9103013C41",
+  worldchainSepolia_USDTElevatedMinterBurner: "0xaF126B36958Ef1A6Ed80118841A7f1660f921346",
+  worldchainSepolia_USDCElevatedMinterBurner: "0x821681B66EeeBF9De09e2D1ed01d7A2d2EFCBfd6",
+  worldchainSepolia_WETHElevatedMinterBurner: "0xB2D53CeA5b2e59F6523088Ba3A149E35E34C24C9",
+  worldchainSepolia_WBTCElevatedMinterBurner: "0x6D68A52Bc77F2eAc3582a7072eAd94C19B9f480c",
 
   worldchainSepolia_MockDex: "0x5C368bd6cE77b2ca47B4ba791fCC1f1645591c84",
 
@@ -67,23 +68,29 @@ export const chain: Record<SupportedChains, PonderChainConfig> = {
     startBlock: 25054919,
     contractAddress: getAddress(contractAddresses.worldchainSepolia_factory),
   },
-  worldchainSepolia_OracleBTCUSDT: {
+  worldchainSepolia_OracleUSDTUSD: {
     id: worldchainSepolia.id,
     rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
     startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_OracleBTCUSDT),
+    contractAddress: getAddress(contractAddresses.worldchainSepolia_OracleUSDTUSD),
   },
-  worldchainSepolia_OracleETHUSDT: {
+  worldchainSepolia_OracleNATIVEUSD: {
     id: worldchainSepolia.id,
     rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
     startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_OracleETHUSDT),
+    contractAddress: getAddress(contractAddresses.worldchainSepolia_OracleNATIVEUSD),
   },
-  worldchainSepolia_OracleKAIAUSDT: {
+  worldchainSepolia_OracleETHUSD: {
     id: worldchainSepolia.id,
     rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
     startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_OracleKAIAUSDT),
+    contractAddress: getAddress(contractAddresses.worldchainSepolia_OracleETHUSD),
+  },
+  worldchainSepolia_OracleBTCUSD: {
+    id: worldchainSepolia.id,
+    rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
+    startBlock: 25054919,
+    contractAddress: getAddress(contractAddresses.worldchainSepolia_OracleBTCUSD),
   },
   worldchainSepolia_InterestRateModel: {
     id: worldchainSepolia.id,
@@ -109,17 +116,23 @@ export const chain: Record<SupportedChains, PonderChainConfig> = {
     startBlock: 25054919,
     contractAddress: getAddress(contractAddresses.worldchainSepolia_USDTElevatedMinterBurner),
   },
-  worldchainSepolia_WKAIAElevatedMinterBurner: {
+  worldchainSepolia_USDCElevatedMinterBurner: {
     id: worldchainSepolia.id,
     rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
     startBlock: 25054919,
-    contractAddress: getAddress(contractAddresses.worldchainSepolia_WKAIAElevatedMinterBurner),
+    contractAddress: getAddress(contractAddresses.worldchainSepolia_USDCElevatedMinterBurner),
   },
   worldchainSepolia_WETHElevatedMinterBurner: {
     id: worldchainSepolia.id,
     rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
     startBlock: 25054919,
     contractAddress: getAddress(contractAddresses.worldchainSepolia_WETHElevatedMinterBurner),
+  },
+  worldchainSepolia_WBTCElevatedMinterBurner: {
+    id: worldchainSepolia.id,
+    rpc: process.env.PONDER_RPC_URL_WORLD_TESTNET_1,
+    startBlock: 25054919,
+    contractAddress: getAddress(contractAddresses.worldchainSepolia_WBTCElevatedMinterBurner),
   },
   worldchainSepolia_MockDex: {
     id: worldchainSepolia.id,
